@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HERFOUND | Verified women-led businesses worth finding</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<p class="demo-bar">Demonstration prototype: every business and verification badge here is fictional sample data.</p>
+
+<header class="nav">
+  <a href="#top" class="wordmark">HER<span>FOUND</span></a>
+  <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+  <nav id="menu" class="menu" aria-label="Main">
+    <a href="#discover">Discover</a>
+    <a href="#categories">Categories</a>
+    <a href="#gems">Hidden Gems</a>
+    <a href="#business">For Business</a>
+    <button type="button" class="link-btn" id="navSearch">Search</button>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-copy">
+      <h1>Find the businesses you didn’t know you needed.</h1>
+      <p class="lede">Discover extraordinary local businesses, founded and run by women, right around you.</p>
+      <form class="search" id="searchForm" role="search">
+        <label for="q">What are you looking for?</label>
+        <div class="search-row">
+          <input id="q" type="search" placeholder="Try “handmade birthday gift”" autocomplete="off">
+          <button type="submit" class="btn">Search</button>
+        </div>
+      </form>
+      <div class="chips" id="chips" aria-label="Suggested searches"></div>
+    </div>
+    <div class="hero-art">
+      <figure class="ph art-a"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=70" alt="Hand-decorated cake from a home bakery" onerror="this.remove()"></figure>
+      <figure class="ph art-b"><img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=600&q=70" alt="Handmade ceramic mugs" onerror="this.remove()"></figure>
+      <figure class="ph art-c"><img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=600&q=70" alt="Handcrafted silver jewellery" onerror="this.remove()"></figure>
+      <p class="seal"><strong>Verified women-led</strong>Kaveri Bakehouse, Pune (sample)</p>
+    </div>
+  </section>
+
+  <section class="section" id="categories">
+    <div class="head reveal"><h2>Start with what you love</h2><p>Pick a category to filter the businesses below.</p></div>
+    <div class="cats reveal" id="cats"></div>
+  </section>
+
+  <section class="section" id="discover">
+    <div class="head reveal">
+      <h2>Discover</h2>
+      <p id="status" role="status" aria-live="polite"></p>
+      <button type="button" class="text-btn" data-reset id="resetTop" hidden>Reset filters</button>
+    </div>
+    <div class="grid" id="grid"></div>
+    <div class="empty" id="empty" hidden>
+      <h3>Nothing matched that search</h3>
+      <p>Try a simpler word like “bakery”, “skincare” or “home decor”, or clear your filters.</p>
+      <button type="button" class="btn" data-reset>Clear search and filters</button>
+    </div>
+  </section>
+
+  <section class="gems" id="gems">
+    <div class="gems-intro reveal">
+      <h2>Small businesses. Big things to discover.</h2>
+      <p>These sample businesses are new, tiny and easy to miss. Start here if you want to find something nobody else has.</p>
+    </div>
+    <ul class="gem-list reveal" id="gemList"></ul>
+  </section>
+
+  <section class="section biz" id="business">
+    <div class="biz-cta reveal">
+      <h2>Run a business? Get found.</h2>
+      <p>List your women-led business for free and earn a verified badge that shoppers can trust.</p>
+      <button type="button" class="btn" data-register>Register your business</button>
+    </div>
+    <div class="verify reveal">
+      <h3>How verification works</h3>
+      <ol>
+        <li><strong>Apply.</strong> Tell us about your business and what you make or offer.</li>
+        <li><strong>Confirm ownership.</strong> Show that a woman founds, owns and runs the business.</li>
+        <li><strong>Check the business.</strong> We look at registration and a real online or local presence.</li>
+        <li><strong>Get listed.</strong> Your profile goes live with a verified badge, rechecked every year.</li>
+      </ol>
+      <p class="note">Prototype note: no real verification happens in this demo.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div>
+    <p class="wordmark">HER<span>FOUND</span></p>
+    <p>Discover verified women-led businesses that deserve to be found. A student prototype with sample data.</p>
+  </div>
+  <nav aria-label="Footer">
+    <a href="#discover">Discover</a>
+    <a href="#categories">Categories</a>
+    <a href="#gems">Hidden Gems</a>
+    <a href="#business">For Business</a>
+  </nav>
+  <div>
+    <button type="button" class="btn light" data-register>Register your business</button>
+    <p class="copy">© 2026 HERFOUND prototype. Sample data only.</p>
+  </div>
+</footer>
+
+<div class="modal" id="profile" role="dialog" aria-modal="true" aria-labelledby="pTitle" hidden>
+  <div class="panel">
+    <button type="button" class="close" data-close aria-label="Close profile">×</button>
+    <div id="pBody"></div>
+  </div>
+</div>
+
+<div class="modal" id="register" role="dialog" aria-modal="true" aria-labelledby="rTitle" hidden>
+  <div class="panel narrow">
+    <button type="button" class="close" data-close aria-label="Close form">×</button>
+    <form id="regForm" novalidate>
+      <h2 id="rTitle">Register your business</h2>
+      <p class="sub">Free to list. Demo only: nothing is sent or stored.</p>
+      <div class="field"><label for="rName">Business name</label><input id="rName" autocomplete="off"><span class="err" id="rName-err"></span></div>
+      <div class="field"><label for="rFounder">Founder name</label><input id="rFounder" autocomplete="off"><span class="err" id="rFounder-err"></span></div>
+      <div class="field"><label for="rCat">Category</label><select id="rCat"></select><span class="err" id="rCat-err"></span></div>
+      <div class="field"><label for="rLoc">Location</label><input id="rLoc" placeholder="City, State" autocomplete="off"><span class="err" id="rLoc-err"></span></div>
+      <div class="field"><label for="rDesc">Description</label><textarea id="rDesc" rows="3" placeholder="What do you make or offer?"></textarea><span class="err" id="rDesc-err"></span></div>
+      <div class="field"><label for="rLink">Instagram or website</label><input id="rLink" placeholder="@yourhandle or https://..." autocomplete="off"><span class="err" id="rLink-err"></span></div>
+      <button type="submit" class="btn">Submit for review</button>
+    </form>
+    <div class="done" id="regDone" hidden>
+      <h2>Application received</h2>
+      <p>Thank you, <span id="doneName"></span>. Your reference is <strong id="doneRef"></strong>. Status: pending review.</p>
+      <p class="sub">This is a prototype, so no email will arrive and nothing was saved.</p>
+      <button type="button" class="btn" data-close>Done</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="script.js"></script>
+</body>
+</html>
